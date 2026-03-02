@@ -295,6 +295,7 @@
     <button class="nav-tab" onclick="showTab('synergies')">Synergies</button>
     <button class="nav-tab" onclick="showTab('vdr')">VDR Coverage</button>
     <button class="nav-tab" onclick="showTab('summary')">Capability Summary</button>
+    <button class="nav-tab" onclick="showTab('full-workflow')">Full Workflow (66 Steps)</button>
   </div>
 </div>
 
@@ -1179,6 +1180,148 @@ graph LR
     end
 
     
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FULL WORKFLOW ==================== -->
+  <div class="chart-section" id="full-workflow">
+    <div class="section-header">
+      <h2>Complete IC Memo Workflow &mdash; All 66 Steps by Phase</h2>
+      <p>Single-view sequential workflow: all 66 build steps across 10 phases for the Project Hops IC Memo. Every step is No Blocker (green) &mdash; 100% LLM-executable with 111/129 VDR documents covered. Steps flow top-to-bottom within each phase, phases flow left-to-right across the build sequence.</p>
+    </div>
+
+    <div class="chart-card" style="overflow-x:auto;">
+      <h3>Project Hops IC Memo &mdash; Full 66-Step Build Workflow</h3>
+      <div class="mermaid">
+graph TD
+    START(["START — VDR Access Confirmed<br/>111/129 Documents Covered"]):::startNode
+
+    subgraph P1 ["Phase 1: Transaction Overview — Deal Leadership — 7 Steps"]
+        S11["1.1 Extract company &amp; deal profile from CIM"]:::greenNode
+        S12["1.2 Review Management Presentation"]:::greenNode
+        S13["1.3 Map corporate structure from org chart"]:::greenNode
+        S14["1.4 Understand process &amp; timeline"]:::greenNode
+        S15["1.5 Cross-reference KPIs against CIM claims"]:::greenNode
+        S16["1.6 Review NDA &amp; corporate docs"]:::greenNode
+        S17["1.7 Draft Transaction Overview"]:::greenNode
+        S11 --> S12 --> S13 --> S14 --> S15 --> S16 --> S17
+    end
+
+    subgraph P2 ["Phase 2: Business Description — Business &amp; Ops — 6 Steps"]
+        S21["2.1 Build brand/product matrix"]:::greenNode
+        S22["2.2 Analyze facilities &amp; unit economics"]:::greenNode
+        S23["2.3 Map supply chain"]:::greenNode
+        S24["2.4 Map distribution network"]:::greenNode
+        S25["2.5 Review locations &amp; QC"]:::greenNode
+        S26["2.6 Draft Business Description"]:::greenNode
+        S21 --> S22 --> S23 --> S24 --> S25 --> S26
+    end
+
+    subgraph P3 ["Phase 3: Financial Foundation — Financial Analysis — 8 Steps"]
+        S31["3.1 Compile historical financials (7yr audited)"]:::greenNode
+        S32["3.2 Quality of Earnings analysis"]:::greenNode
+        S33["3.3 Revenue bridge &amp; concentration"]:::greenNode
+        S34["3.4 Validate model &amp; build EBITDA bridge"]:::greenNode
+        S35["3.5 Working capital analysis"]:::greenNode
+        S36["3.6 Debt &amp; covenant analysis"]:::greenNode
+        S37["3.7 Capex split &amp; accounting review"]:::greenNode
+        S38["3.8 Compile financial analysis package"]:::greenNode
+        S31 --> S32 --> S33 --> S34 --> S35 --> S36 --> S37 --> S38
+    end
+
+    subgraph P4 ["Phase 4: Industry &amp; Market — Business &amp; Ops — 4 Steps"]
+        S41["4.1 Extract market data (craft beer TAM)"]:::greenNode
+        S42["4.2 Analyze competitive landscape"]:::greenNode
+        S43["4.3 Consumer insights &amp; emerging threats"]:::greenNode
+        S44["4.4 Draft Industry &amp; Market section"]:::greenNode
+        S41 --> S42 --> S43 --> S44
+    end
+
+    subgraph P5 ["Phase 5: Investment Thesis — Deal Leadership — 4 Steps"]
+        S51["5.1 Distill top 3-5 investment highlights"]:::greenNode
+        S52["5.2 Define value creation thesis"]:::greenNode
+        S53["5.3 Build upside case (quantified scenarios)"]:::greenNode
+        S54["5.4 Identify differentiated insights"]:::greenNode
+        S51 --> S52 --> S53 --> S54
+    end
+
+    subgraph P6 ["Phase 6: Key Risks — Deal Leadership — 6 Steps"]
+        S61["6.1 Compile all prior-phase flags"]:::greenNode
+        S62["6.2 Review litigation, regulatory, environmental &amp; tax risks"]:::greenNode
+        S63["6.3 Assess customer &amp; revenue durability risks"]:::greenNode
+        S64["6.4 Assess deal-specific risks"]:::greenNode
+        S65["6.5 Build Risk Factor Matrix"]:::greenNode
+        S66["6.6 Build sensitivity analysis"]:::greenNode
+        S61 --> S62 --> S63 --> S64 --> S65 --> S66
+    end
+
+    subgraph P7 ["Phase 7: Deal Terms &amp; Structure — Legal &amp; Tax — 12 Steps"]
+        S71["7.1 Fully diluted cap table"]:::greenNode
+        S72["7.2 Shareholder base &amp; cost basis"]:::greenNode
+        S73["7.3 Shareholder Voting Matrix"]:::greenNode
+        S74["7.4 Change-of-control matrix"]:::greenNode
+        S75["7.5 Consent &amp; approval tracker"]:::greenNode
+        S76["7.6 Board authorization &amp; deal process"]:::greenNode
+        S77["7.7 Shareholder agreement &amp; Monarch QO"]:::greenNode
+        S78["7.8 280G golden parachute analysis"]:::greenNode
+        S79["7.9 HSR/antitrust assessment"]:::greenNode
+        S710["7.10 Tax structure memo"]:::greenNode
+        S711["7.11 Regulatory approvals matrix"]:::greenNode
+        S712["7.12 Draft Deal Terms section"]:::greenNode
+        S71 --> S72 --> S73 --> S74 --> S75 --> S76
+        S76 --> S77 --> S78 --> S79 --> S710 --> S711 --> S712
+    end
+
+    subgraph P8 ["Phase 8: Synergies &amp; Integration — Synergies Team — 7 Steps"]
+        S81["8.1 Categorize &amp; quantify synergies"]:::greenNode
+        S82["8.2 Estimate one-time costs to achieve"]:::greenNode
+        S83["8.3 Review prior acquisitions (AMB, Wharf, Canvas)"]:::greenNode
+        S84["8.4 Outline integration plan"]:::greenNode
+        S85["8.5 People &amp; org integration"]:::greenNode
+        S86["8.6 IT systems integration"]:::greenNode
+        S87["8.7 Draft Synergies section with waterfall"]:::greenNode
+        S81 --> S82 --> S83 --> S84 --> S85 --> S86 --> S87
+    end
+
+    subgraph P9 ["Phase 9: Valuation &amp; Returns — Financial Analysis — 9 Steps"]
+        S91["9.1 Comparable companies analysis"]:::greenNode
+        S92["9.2 Precedent transactions"]:::greenNode
+        S93["9.3 DCF model"]:::greenNode
+        S94["9.4 Historical stock price analysis"]:::greenNode
+        S95["9.5 Valuation triangulation (football field)"]:::greenNode
+        S96["9.6 Returns analysis (LBO)"]:::greenNode
+        S97["9.7 Premium analysis"]:::greenNode
+        S98["9.8 Sources &amp; uses table"]:::greenNode
+        S99["9.9 Draft Valuation section"]:::greenNode
+        S91 --> S92 --> S93 --> S94 --> S95 --> S96 --> S97 --> S98 --> S99
+    end
+
+    subgraph P10 ["Phase 10: Recommendation &amp; Final Assembly — Deal Leadership — 3 Steps"]
+        S101["10.1 Draft recommendation: Proceed / Conditions / Do Not Proceed"]:::greenNode
+        S102["10.2 Write Executive Summary (1-2 pages)"]:::greenNode
+        S103["10.3 Final document assembly &amp; validation"]:::greenNode
+        S101 --> S102 --> S103
+    end
+
+    START --> S11
+    S17 --> S21
+    S17 --> S31
+    S26 --> S41
+    S38 --> S91
+    S44 --> S51
+    S54 --> S61
+    S66 --> S71
+    S26 --> S81
+    S38 --> S81
+    S87 --> S91
+    S712 --> S101
+    S99 --> S101
+    S66 --> S101
+    S103 --> FINISH(["FINISH — IC Memo Complete<br/>66 Steps &bull; 10 Phases &bull; 100% No Blocker"]):::startNode
+
+    classDef greenNode fill:#E8F5E9,stroke:#4CAF50,color:#1B5E20,stroke-width:2px
+    classDef startNode fill:#E3F2FD,stroke:#1976D2,color:#0D47A1,stroke-width:3px
       </div>
     </div>
   </div>
