@@ -1190,12 +1190,12 @@ graph LR
   <!-- ==================== FULL WORKFLOW ==================== -->
   <div class="chart-section" id="full-workflow">
     <div class="section-header">
-      <h2>Complete IC Memo Workflow &mdash; All 66 Steps by Phase</h2>
-      <p>Single-view sequential workflow: all 66 build steps across 10 phases for the Project Hops IC Memo. 64 steps are No Blocker (green), 2 are Soft Blocker (yellow: S7.9, S9.4) &mdash; 97% LLM-executable with 111/129 VDR documents covered. Steps flow top-to-bottom within each phase, phases flow left-to-right across the build sequence.</p>
+      <h2>Complete IC Memo Workflow &mdash; All 66 Steps &amp; 10 Checkpoints</h2>
+      <p>Single-view sequential workflow: all 66 build steps and 10 quality-gate checkpoints across 10 phases for the Project Hops IC Memo. 64 steps are No Blocker (green), 2 are Soft Blocker (yellow: S7.9, S9.4) &mdash; 97% LLM-executable with 111/129 VDR documents covered. Diamond nodes represent checkpoints that must pass before downstream phases begin.</p>
     </div>
 
     <div class="chart-card" style="overflow-x:auto;">
-      <h3>Project Hops IC Memo &mdash; Full 66-Step Build Workflow</h3>
+      <h3>Project Hops IC Memo &mdash; Full 66-Step Build Workflow with 10 Checkpoints</h3>
       <div class="mermaid">
 graph TD
     START(["START — VDR Access Confirmed<br/>111/129 Documents Covered"]):::startNode
@@ -1210,6 +1210,8 @@ graph TD
         S17["1.7 Draft Transaction Overview"]:::greenNode
         S11 --> S12 --> S13 --> S14 --> S15 --> S16 --> S17
     end
+
+    CP1{"CP 1: CIM verified?<br/>Structure mapped?<br/>Timeline set?"}:::decisionNode
 
     subgraph P2 ["Phase 2: Business Description — Business &amp; Ops — 6 Steps"]
         S21["2.1 Build brand/product matrix"]:::greenNode
@@ -1233,6 +1235,9 @@ graph TD
         S31 --> S32 --> S33 --> S34 --> S35 --> S36 --> S37 --> S38
     end
 
+    CP2{"CP 2: Brands profiled?<br/>Ops mapped?"}:::decisionNode
+    CP3{"CP 3: EBITDA reconciled?<br/>Model audited?"}:::decisionNode
+
     subgraph P4 ["Phase 4: Industry &amp; Market — Business &amp; Ops — 4 Steps"]
         S41["4.1 Extract market data (craft beer TAM)"]:::greenNode
         S42["4.2 Analyze competitive landscape"]:::greenNode
@@ -1241,6 +1246,8 @@ graph TD
         S41 --> S42 --> S43 --> S44
     end
 
+    CP4{"CP 4: Market sized?<br/>Comps profiled?"}:::decisionNode
+
     subgraph P5 ["Phase 5: Investment Thesis — Deal Leadership — 4 Steps"]
         S51["5.1 Distill top 3-5 investment highlights"]:::greenNode
         S52["5.2 Define value creation thesis"]:::greenNode
@@ -1248,6 +1255,8 @@ graph TD
         S54["5.4 Identify differentiated insights"]:::greenNode
         S51 --> S52 --> S53 --> S54
     end
+
+    CP5{"CP 5: Thesis quantified?"}:::decisionNode
 
     subgraph P6 ["Phase 6: Key Risks — Deal Leadership — 6 Steps"]
         S61["6.1 Compile all prior-phase flags"]:::greenNode
@@ -1258,6 +1267,8 @@ graph TD
         S66["6.6 Build sensitivity analysis"]:::greenNode
         S61 --> S62 --> S63 --> S64 --> S65 --> S66
     end
+
+    CP6{"CP 6: Risk matrix done?"}:::decisionNode
 
     subgraph P7 ["Phase 7: Deal Terms &amp; Structure — Legal &amp; Tax — 12 Steps"]
         S71["7.1 Fully diluted cap table"]:::greenNode
@@ -1276,6 +1287,8 @@ graph TD
         S76 --> S77 --> S78 --> S79 --> S710 --> S711 --> S712
     end
 
+    CP7{"CP 7: Cap table verified?<br/>Consents tracked?"}:::decisionNode
+
     subgraph P8 ["Phase 8: Synergies &amp; Integration — Synergies Team — 7 Steps"]
         S81["8.1 Categorize &amp; quantify synergies"]:::greenNode
         S82["8.2 Estimate one-time costs to achieve"]:::greenNode
@@ -1286,6 +1299,8 @@ graph TD
         S87["8.7 Draft Synergies section with waterfall"]:::greenNode
         S81 --> S82 --> S83 --> S84 --> S85 --> S86 --> S87
     end
+
+    CP8{"CP 8: Synergies quantified?"}:::decisionNode
 
     subgraph P9 ["Phase 9: Valuation &amp; Returns — Financial Analysis — 9 Steps"]
         S91["9.1 Comparable companies analysis"]:::greenNode
@@ -1300,6 +1315,8 @@ graph TD
         S91 --> S92 --> S93 --> S94 --> S95 --> S96 --> S97 --> S98 --> S99
     end
 
+    CP9{"CP 9: Valuation triangulated?<br/>Returns modelled?"}:::decisionNode
+
     subgraph P10 ["Phase 10: Recommendation &amp; Final Assembly — Deal Leadership — 3 Steps"]
         S101["10.1 Draft recommendation: Proceed / Conditions / Do Not Proceed"]:::greenNode
         S102["10.2 Write Executive Summary (1-2 pages)"]:::greenNode
@@ -1307,24 +1324,70 @@ graph TD
         S101 --> S102 --> S103
     end
 
+    CP10{"FINAL: Numbers consistent?<br/>Sources traced?"}:::decisionNode
+
+    %% Flow: START to Phase 1
     START --> S11
-    S17 --> S21
-    S17 --> S31
-    S26 --> S41
-    S38 --> S91
-    S44 --> S51
-    S54 --> S61
-    S66 --> S71
-    S26 --> S81
-    S38 --> S81
-    S87 --> S91
-    S712 --> S101
-    S99 --> S101
-    S66 --> S101
-    S103 --> FINISH(["FINISH — IC Memo Complete<br/>66 Steps &bull; 10 Phases &bull; 97% No Blocker"]):::startNode
+
+    %% Phase 1 → CP1
+    S17 --> CP1
+
+    %% CP1 gates Phase 2, Phase 3, Phase 4, Phase 7
+    CP1 -->|Yes| S21
+    CP1 -->|Yes| S31
+    CP1 -->|Yes| S41
+    CP1 -->|Yes| S71
+
+    %% Phase 2 → CP2
+    S26 --> CP2
+
+    %% CP2 gates Phase 5, Phase 6, Phase 8
+    CP2 -->|Yes| S51
+    CP2 -->|Yes| S61
+    CP2 -->|Yes| S81
+
+    %% Phase 3 → CP3
+    S38 --> CP3
+
+    %% CP3 gates Phase 5, Phase 6, Phase 8, Phase 9
+    CP3 -->|Yes| S51
+    CP3 -->|Yes| S61
+    CP3 -->|Yes| S81
+    CP3 -->|Yes| S91
+
+    %% Phase 4 → CP4
+    S44 --> CP4
+    CP4 -->|Yes| S51
+
+    %% Phase 5 → CP5
+    S54 --> CP5
+    CP5 -->|Yes| S91
+
+    %% Phase 6 → CP6
+    S66 --> CP6
+    CP6 -->|Yes| S91
+    CP6 -->|Yes| S101
+
+    %% Phase 7 → CP7
+    S712 --> CP7
+    CP7 -->|Yes| S91
+
+    %% Phase 8 → CP8
+    S87 --> CP8
+    CP8 -->|Yes| S91
+
+    %% Phase 9 → CP9
+    S99 --> CP9
+    CP9 -->|Yes| S101
+
+    %% Phase 10 → CP10 → FINISH
+    S103 --> CP10
+    CP10 -->|Approved| FINISH(["FINISH — IC Memo Complete<br/>66 Steps &bull; 10 Phases &bull; 10 Checkpoints &bull; 97% No Blocker"]):::startNode
 
     classDef greenNode fill:#E8F5E9,stroke:#4CAF50,color:#1B5E20,stroke-width:2px
+    classDef yellowNode fill:#FFF8E1,stroke:#FFC107,color:#795548,stroke-width:2px
     classDef startNode fill:#E3F2FD,stroke:#1976D2,color:#0D47A1,stroke-width:3px
+    classDef decisionNode fill:#F3F4F6,stroke:#6B7280,color:#374151,stroke-width:2px
       </div>
     </div>
   </div>
