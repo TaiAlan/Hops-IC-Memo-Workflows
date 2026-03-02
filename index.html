@@ -280,9 +280,10 @@
   <h1>IC Memo Workflow Charts &mdash; Project Hops</h1>
   <div class="subtitle">66 Steps &bull; 10 Phases &bull; 5 Teams &bull; 129 Source Documents &bull; 10 Checkpoints</div>
   <div class="gar-bar">
-    <div class="gar-seg gar-green">No Blocker 100%</div>
+    <div class="gar-seg gar-green">No Blocker 97%</div>
+    <div class="gar-seg gar-yellow">Soft Blocker 3%</div>
   </div>
-  <p style="margin-top:0.4rem;">Green = No Blocker (66 steps, 100%) &bull; Yellow = Soft Blocker (0 steps, 0%) &bull; Red = Hard Blocker (0 steps) &bull; March 2026</p>
+  <p style="margin-top:0.4rem;">Green = No Blocker (64 steps, 97%) &bull; Yellow = Soft Blocker (2 steps, 3%) &bull; Red = Hard Blocker (0 steps) &bull; March 2026</p>
 </div>
 
 <div class="nav-container">
@@ -305,7 +306,7 @@
   <div class="chart-section active" id="overall">
     <div class="section-header">
       <h2>Master Build Sequence &mdash; Project Hops Blocker Overlay</h2>
-      <p>Each phase is colour-coded by predominant blocker status. Green = No Blocker (LLM-ready). Yellow = Soft Blocker (requires pre-fetching or commissioning external deliverables). No soft or hard blockers remain — all previously blocked documents have been generated. 66 build steps across 10 phases, mapped against 129 VDR source documents (111 covered, 18 missing) for Hops Beverage Partners.</p>
+      <p>Each phase is colour-coded by predominant blocker status. Green = No Blocker (LLM-ready). Yellow = Soft Blocker (requires pre-fetching or commissioning external deliverables). Two soft blockers remain: S7.9 (HSR — needs external antitrust counsel) and S9.4 (stock price — needs Bloomberg/FactSet data). No hard blockers. 66 build steps across 10 phases, mapped against 129 VDR source documents (111 covered, 18 missing) for Hops Beverage Partners.</p>
     </div>
 
     <div class="legend">
@@ -319,13 +320,13 @@
     <div class="info-grid">
       <div class="info-box green-stat">
         <h4>No Blocker (Green)</h4>
-        <div class="value">66 steps (100%)</div>
-        <div class="detail">All data extraction, analysis, drafting, modelling — LLM-ready with provided VDR reference files. All previously missing documents have been generated.</div>
+        <div class="value">64 steps (97%)</div>
+        <div class="detail">All data extraction, analysis, drafting, modelling — LLM-ready with provided VDR reference files. 9 of 11 previously missing documents fully resolved. 2 soft blockers remain.</div>
       </div>
       <div class="info-box yellow-stat">
         <h4>Soft Blocker (Yellow)</h4>
-        <div class="value">0 steps (0%)</div>
-        <div class="detail">All previously missing deliverables (280G, HSR, QoE, tax, stock price, synergy analysis, etc.) have been generated and placed in VDR</div>
+        <div class="value">2 steps (3%)</div>
+        <div class="detail">S7.9 HSR/antitrust needs external counsel opinion; S9.4 stock price needs Bloomberg/FactSet vendor data</div>
       </div>
       <div class="info-box red-stat">
         <h4>Hard Blocker (Red)</h4>
@@ -575,7 +576,7 @@ graph TB
   <div class="chart-section" id="financial">
     <div class="section-header">
       <h2>Financial Analysis <span class="team-badge fin">Phases 3, 9</span></h2>
-      <p>Phase 3: 8/8 No Blocker (QoE Report now generated). Phase 9: 9/9 No Blocker (stock price data now available). Comps and precedents available in VDR; DCF and returns can be built by LLM from Financial Model v7. 66 VDR docs across these phases.</p>
+      <p>Phase 3: 8/8 No Blocker (QoE Report now generated). Phase 9: 8/9 No Blocker, 1 Soft Blocker (S9.4 stock price compiled from SEC 10-K filings — needs Bloomberg/FactSet vendor data for full granularity). Comps and precedents available in VDR; DCF and returns can be built by LLM from Financial Model v7. 66 VDR docs across these phases.</p>
     </div>
 
     <div class="legend">
@@ -647,7 +648,7 @@ graph TB
     </div>
 
     <div class="chart-card">
-      <h3>Phase 9: Valuation &amp; Returns (9 steps &mdash; 9 No Blocker)</h3>
+      <h3>Phase 9: Valuation &amp; Returns (9 steps &mdash; 8 No Blocker / 1 Soft Blocker)</h3>
       <div class="mermaid">
 graph TB
     subgraph P9 ["Phase 9: Valuation & Returns — Financial Analysis — 2-3 days — 43 VDR docs"]
@@ -662,7 +663,7 @@ graph TB
         S91["Step 9.1<br/>Comparable companies<br/>(Doc #48, #124-125)"]:::greenNode
         S92["Step 9.2<br/>Precedent transactions<br/>(Docs #126-127)"]:::greenNode
         S93["Step 9.3<br/>DCF model<br/>(Doc #50 — COVERED)"]:::greenNode
-        S94["Step 9.4<br/>Historical stock price<br/>(Doc #52 — COVERED)"]:::greenNode
+        S94["Step 9.4<br/>Historical stock price<br/>(Doc #52 — SOFT BLOCKER)"]:::yellowNode
         S95["Step 9.5<br/>Valuation triangulation<br/>(football field)"]:::greenNode
         D95{"Valuation methods<br/>converge within<br/>reasonable range?"}:::decisionNode
         S96["Step 9.6<br/>Returns analysis<br/>(Doc #128 LBO, #129 — PARTIAL)"]:::greenNode
@@ -803,7 +804,7 @@ graph TB
   <div class="chart-section" id="legal">
     <div class="section-header">
       <h2>Legal &amp; Tax <span class="team-badge legal">Phase 7</span></h2>
-      <p>Phase 7: 12/12 No Blocker. All 5 previously blocked deliverables have been generated (13F analysis, 280G analysis, HSR filing strategy, tax structure memo, regulatory approvals matrix). All 15 VDR docs now COVERED.</p>
+      <p>Phase 7: 11/12 No Blocker, 1 Soft Blocker. 4 of 5 previously blocked deliverables fully resolved. S7.9 (HSR Filing Strategy) retains soft blocker status — current document is a deal team analysis, needs supplementation with signed external antitrust counsel memorandum.</p>
     </div>
 
     <div class="legend">
@@ -828,7 +829,7 @@ graph TB
     </div>
 
     <div class="chart-card">
-      <h3>Phase 7: Deal Terms &amp; Structure (12 steps &mdash; 12 No Blocker)</h3>
+      <h3>Phase 7: Deal Terms &amp; Structure (12 steps &mdash; 11 No Blocker / 1 Soft Blocker)</h3>
       <div class="mermaid">
 graph TB
     subgraph P7 ["Phase 7: Deal Terms & Structure — Legal & Tax — 1-2 days — 15 VDR docs"]
@@ -844,7 +845,7 @@ graph TB
         S76["Step 7.6<br/>Board authorization &<br/>deal process (Doc #65)"]:::greenNode
         S77["Step 7.7<br/>Shareholder agreement &<br/>Monarch QO (Docs #64, #71)"]:::greenNode
         S78["Step 7.8<br/>280G golden parachute<br/>(Doc #74 — COVERED)"]:::greenNode
-        S79["Step 7.9<br/>HSR/antitrust assessment<br/>(Doc #75 — COVERED)"]:::greenNode
+        S79["Step 7.9<br/>HSR/antitrust assessment<br/>(Doc #75 — SOFT BLOCKER)"]:::yellowNode
         D79{"HSR filing<br/>required?"}:::decisionNode
         S710["Step 7.10<br/>Tax structure memo<br/>(Doc #73 — COVERED)"]:::greenNode
         S711["Step 7.11<br/>Regulatory approvals matrix<br/>(Doc #70 — COVERED)"]:::greenNode
@@ -1055,19 +1056,19 @@ graph TD
   <div class="chart-section" id="summary">
     <div class="section-header">
       <h2>Blocker Summary &mdash; Project Hops</h2>
-      <p>Consolidated view of all 66 workflow steps classified by Blocker type, mapped against 129 VDR source documents (111 covered, 18 missing). No Blocker = LLM end-to-end with provided reference files. Soft Blocker = requires pre-fetching or commissioning external deliverables. Hard Blocker = none. 100% of steps are now LLM-executable — all previously missing deliverables have been generated.</p>
+      <p>Consolidated view of all 66 workflow steps classified by Blocker type, mapped against 129 VDR source documents (111 covered, 18 missing). No Blocker = LLM end-to-end with provided reference files. Soft Blocker = requires pre-fetching or commissioning external deliverables. Hard Blocker = none. 97% of steps (64/66) are immediately LLM-executable. 2 steps retain soft blocker status: S7.9 (HSR — needs external antitrust counsel opinion) and S9.4 (stock price — needs Bloomberg/FactSet data).</p>
     </div>
 
     <div class="info-grid">
       <div class="info-box green-stat">
         <h4>No Blocker (Green)</h4>
-        <div class="value">66 steps (100%)</div>
+        <div class="value">64 steps (97%)</div>
         <div class="detail">All extraction, analysis, modelling, drafting, and compilation — LLM-ready with VDR reference files. All 129 workflow-critical documents available.</div>
       </div>
       <div class="info-box yellow-stat">
         <h4>Soft Blocker (Yellow)</h4>
-        <div class="value">0 steps (0%)</div>
-        <div class="detail">S1.2, S1.4, S3.2, S7.2, S7.8, S7.9, S7.10, S7.11, S8.1, S8.5, S9.4 — all require pre-fetch or commission</div>
+        <div class="value">2 steps (3%)</div>
+        <div class="detail">S7.9 (HSR — needs external antitrust counsel) and S9.4 (stock price — needs Bloomberg/FactSet). 9 previously blocked steps now resolved.</div>
       </div>
       <div class="info-box red-stat">
         <h4>Hard Blocker (Red)</h4>
@@ -1080,8 +1081,8 @@ graph TD
       <h3>Blocker Distribution Across All 66 Steps</h3>
       <div class="mermaid">
 pie title Blocker Distribution — 66 Steps (Project Hops)
-    "No Blocker (66)" : 66
-    "Soft Blocker (0)" : 0
+    "No Blocker (64)" : 64
+    "Soft Blocker (2)" : 2
       </div>
     </div>
 
@@ -1114,7 +1115,8 @@ graph LR
     end
 
     subgraph Phase7 ["Phase 7: Deal Terms (12)"]
-        P7G["12 No Blocker"]:::greenNode
+        P7G["11 No Blocker"]:::greenNode
+        P7Y["1 Soft Blocker"]:::yellowNode
     end
 
     subgraph Phase8 ["Phase 8: Synergies (7)"]
@@ -1122,7 +1124,8 @@ graph LR
     end
 
     subgraph Phase9 ["Phase 9: Valuation (9)"]
-        P9G["9 No Blocker"]:::greenNode
+        P9G["8 No Blocker"]:::greenNode
+        P9Y["1 Soft Blocker"]:::yellowNode
     end
 
     subgraph Phase10 ["Phase 10: Recommendation (3)"]
@@ -1142,14 +1145,14 @@ graph TD
     T["Blocker Resolution Priority<br/>(Steps requiring pre-fetch/commission)"]:::decisionNode
 
     T --> A["Phase 2: Business Description<br/>6/6 No Blocker, 12/13 docs COVERED<br/>1-2 days saveable"]:::greenNode
-    T --> B["Phase 9: Valuation<br/>9/9 No Blocker<br/>Comps & LBO in VDR — 2-3 days saveable"]:::greenNode
+    T --> B["Phase 9: Valuation<br/>8/9 No Blocker, 1 Soft Blocker<br/>S9.4 stock price needs Bloomberg"]:::yellowNode
     T --> C["Phase 1: Transaction Overview<br/>7/7 No Blocker<br/>CIM & Mgmt Pres available — 0.5 day saveable"]:::greenNode
 
     T --> D["Phase 3: Financial Foundation<br/>8/8 No Blocker<br/>QoE & EBITDA bridge now available"]:::greenNode
     T --> E["Phase 4: Industry & Market<br/>4/4 No Blocker, all 6 docs COVERED<br/>Good data, needs judgment"]:::greenNode
     T --> F["Phase 6: Key Risks<br/>6/6 No Blocker<br/>Both VDR docs now COVERED"]:::greenNode
 
-    T --> G["Phase 7: Deal Terms<br/>12/12 No Blocker<br/>280G, HSR, tax structure, regulatory all generated"]:::greenNode
+    T --> G["Phase 7: Deal Terms<br/>11/12 No Blocker, 1 Soft Blocker<br/>S7.9 HSR needs external counsel"]:::yellowNode
     T --> H["Phase 5: Investment Thesis<br/>4/4 No Blocker<br/>Judgment-heavy, no blockers"]:::greenNode
     T --> I["Phase 10: Recommendation<br/>3/3 No Blocker<br/>Senior sign-off required"]:::greenNode
 
@@ -1161,22 +1164,22 @@ graph TD
     </div>
 
     <div class="chart-card">
-      <h3>The 11 Previously Blocked Steps &mdash; All Now Resolved</h3>
+      <h3>11 Previously Blocked Steps &mdash; 9 Resolved, 2 Remain</h3>
       <div class="mermaid">
 graph LR
-    subgraph SOFTBLOCK ["Previously Blocked Steps — All 11 Now Resolved (0% remaining)"]
+    subgraph SOFTBLOCK ["Previously Blocked Steps — 9 Resolved, 2 Soft Blockers Remain"]
         direction TB
         SB1["Step 1.2<br/>Management Presentation<br/><i>Doc #2 — RESOLVED<br/>(generated)</i>"]:::greenNode
         SB2["Step 1.4<br/>Process Letter<br/><i>Doc #5 — RESOLVED<br/>(generated)</i>"]:::greenNode
         SB3["Step 3.2<br/>Quality of Earnings<br/><i>Doc #34 — RESOLVED<br/>(generated)</i>"]:::greenNode
         SB4["Step 7.2<br/>Shareholder 13F Data<br/><i>Doc #68 — RESOLVED<br/>(generated)</i>"]:::greenNode
         SB5["Step 7.8<br/>280G Golden Parachute<br/><i>Doc #74 — RESOLVED<br/>(generated)</i>"]:::greenNode
-        SB6["Step 7.9<br/>HSR/Antitrust<br/><i>Doc #75 — RESOLVED<br/>(generated)</i>"]:::greenNode
+        SB6["Step 7.9<br/>HSR/Antitrust<br/><i>Doc #75 — SOFT BLOCKER<br/>(needs external counsel)</i>"]:::yellowNode
         SB7["Step 7.10<br/>Tax Structure Memo<br/><i>Doc #73 — RESOLVED<br/>(generated)</i>"]:::greenNode
         SB8["Step 7.11<br/>Regulatory Approvals<br/><i>Doc #70 — RESOLVED<br/>(generated)</i>"]:::greenNode
         SB9["Step 8.1<br/>Synergy Analysis<br/><i>Doc #76 — RESOLVED<br/>(generated)</i>"]:::greenNode
         SB10["Step 8.5<br/>People &amp; Org Data<br/><i>Doc #86 — RESOLVED<br/>(generated)</i>"]:::greenNode
-        SB11["Step 9.4<br/>Historical Stock Price<br/><i>Doc #52 — RESOLVED<br/>(generated)</i>"]:::greenNode
+        SB11["Step 9.4<br/>Historical Stock Price<br/><i>Doc #52 — SOFT BLOCKER<br/>(needs Bloomberg/FactSet)</i>"]:::yellowNode
     end
 
     
@@ -1188,7 +1191,7 @@ graph LR
   <div class="chart-section" id="full-workflow">
     <div class="section-header">
       <h2>Complete IC Memo Workflow &mdash; All 66 Steps by Phase</h2>
-      <p>Single-view sequential workflow: all 66 build steps across 10 phases for the Project Hops IC Memo. Every step is No Blocker (green) &mdash; 100% LLM-executable with 111/129 VDR documents covered. Steps flow top-to-bottom within each phase, phases flow left-to-right across the build sequence.</p>
+      <p>Single-view sequential workflow: all 66 build steps across 10 phases for the Project Hops IC Memo. 64 steps are No Blocker (green), 2 are Soft Blocker (yellow: S7.9, S9.4) &mdash; 97% LLM-executable with 111/129 VDR documents covered. Steps flow top-to-bottom within each phase, phases flow left-to-right across the build sequence.</p>
     </div>
 
     <div class="chart-card" style="overflow-x:auto;">
@@ -1265,7 +1268,7 @@ graph TD
         S76["7.6 Board authorization &amp; deal process"]:::greenNode
         S77["7.7 Shareholder agreement &amp; Monarch QO"]:::greenNode
         S78["7.8 280G golden parachute analysis"]:::greenNode
-        S79["7.9 HSR/antitrust assessment"]:::greenNode
+        S79["7.9 HSR/antitrust assessment"]:::yellowNode
         S710["7.10 Tax structure memo"]:::greenNode
         S711["7.11 Regulatory approvals matrix"]:::greenNode
         S712["7.12 Draft Deal Terms section"]:::greenNode
@@ -1288,7 +1291,7 @@ graph TD
         S91["9.1 Comparable companies analysis"]:::greenNode
         S92["9.2 Precedent transactions"]:::greenNode
         S93["9.3 DCF model"]:::greenNode
-        S94["9.4 Historical stock price analysis"]:::greenNode
+        S94["9.4 Historical stock price analysis"]:::yellowNode
         S95["9.5 Valuation triangulation (football field)"]:::greenNode
         S96["9.6 Returns analysis (LBO)"]:::greenNode
         S97["9.7 Premium analysis"]:::greenNode
@@ -1318,7 +1321,7 @@ graph TD
     S712 --> S101
     S99 --> S101
     S66 --> S101
-    S103 --> FINISH(["FINISH — IC Memo Complete<br/>66 Steps &bull; 10 Phases &bull; 100% No Blocker"]):::startNode
+    S103 --> FINISH(["FINISH — IC Memo Complete<br/>66 Steps &bull; 10 Phases &bull; 97% No Blocker"]):::startNode
 
     classDef greenNode fill:#E8F5E9,stroke:#4CAF50,color:#1B5E20,stroke-width:2px
     classDef startNode fill:#E3F2FD,stroke:#1976D2,color:#0D47A1,stroke-width:3px
@@ -1330,7 +1333,7 @@ graph TD
 
 <div class="footer">
   <p>Project Hops &mdash; IC Memo Workflow Charts v6.0 &mdash; Aligned with Master Build &amp; Gap Tracker, RACI Matrix, and 129-Document Source Guide (111 Covered) &bull; February 2026</p>
-  <p>No Blocker 100% (66 steps) &bull; Soft Blocker 0% (0 steps) &bull; Hard Blocker 0% (0 steps) &bull; 66 steps total &bull; 111/129 VDR documents covered</p>
+  <p>No Blocker 97% (64 steps) &bull; Soft Blocker 3% (2 steps) &bull; Hard Blocker 0% (0 steps) &bull; 66 steps total &bull; 111/129 VDR documents covered</p>
 </div>
 
 <script>
